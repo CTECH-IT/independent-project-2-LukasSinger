@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Ubuntu-Light";
+  src: url("../assets/fonts/Ubuntu-Light.ttf");
+}
+
 :root {
   --navbar-height: 100px;
 }
@@ -6,6 +11,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: black;
+  font-family: "Ubuntu-Light";
 }
 
 #navbar {
@@ -43,14 +49,37 @@ body {
 
 .section {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 #header-section {
   height: 500px;
   overflow: hidden;
-  background: center / cover url("../assets/thumb1.jpg");
+}
+
+#header-bg {
+  width: 100%;
+  height: 500px;
+  background: top / cover url("../assets/thumb1.jpg");
   filter: blur(6px);
+  transform: scale(1.02);
+}
+
+#header-content-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+}
+
+#header-content span {
+  text-transform: uppercase;
+  font-size: 36px;
+  color: white;
+  text-shadow: black 0 0 5px;
 }
 
 #content-section {

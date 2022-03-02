@@ -72,6 +72,18 @@ body {
 #header-section {
   height: 500px;
   overflow: hidden;
+  animation: welcome 0.75s cubic-bezier(0.17, 0.7, 0.34, 0.98);
+}
+
+@keyframes welcome {
+  from {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
 }
 
 #header-bg {
@@ -89,6 +101,7 @@ body {
   position: absolute;
   text-align: center;
   padding: 75px;
+  animation: welcome-text 0.75s cubic-bezier(0.17, 0.7, 0.34, 0.98);
 }
 
 #header-content span {
@@ -97,6 +110,17 @@ body {
   font-weight: 500;
   color: white;
   text-shadow: black 0 0 20px;
+}
+
+@keyframes welcome-text {
+  from {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
 }
 
 #content-section {

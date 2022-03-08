@@ -10,11 +10,13 @@ function setAsDetail(element) {
   // Revert the old detail image (if any) to a regular image
   const oldDetail = document.querySelector(DETAIL_IMAGE_SELECTOR);
   if (oldDetail) {
-    oldDetail.setAttribute(DETAIL_IMAGE_ATTRIBUTE, "false");
     oldDetail.classList.remove("detail");
+    oldDetail.parentElement.classList.remove("detail-container");
+    oldDetail.setAttribute(DETAIL_IMAGE_ATTRIBUTE, "false");
   }
   // Convert the specified element to a detail image
   element.classList.add("detail");
+  element.parentElement.classList.add("detail-container");
   element.setAttribute(DETAIL_IMAGE_ATTRIBUTE, "true");
 }
 
@@ -46,17 +48,23 @@ function populateSlidesContainer() {
     const description = document.createElement("span");
     description.classList.add("slide-description");
     description.textContent = slide.description;
-    // Create the text container and add the text elements
+    // Create the text + container and add the text elements
+    const textDiv = document.createElement("div");
+    textDiv.classList.add("slide-text");
+    textDiv.appendChild(name);
+    textDiv.appendChild(subtitle);
+    textDiv.appendChild(description);
     const textContainer = document.createElement("div");
     textContainer.classList.add("slide-text-container");
-    textContainer.appendChild(name);
-    textContainer.appendChild(subtitle);
-    textContainer.appendChild(description);
-    // Create the container for both slide elements
+    textContainer.appendChild(textDiv);
+    // Create the containers for both slide elements
+    const slideDiv = document.createElement("div");
+    slideDiv.classList.add("slide-content");
+    slideDiv.appendChild(imgContainer);
+    slideDiv.appendChild(textContainer);
     const slideContainer = document.createElement("div");
     slideContainer.classList.add("slide-container");
-    slideContainer.appendChild(imgContainer);
-    slideContainer.appendChild(textContainer);
+    slideContainer.appendChild(slideDiv);
     // Add all of the elements to the page
     slidesContainer.appendChild(slideContainer);
 

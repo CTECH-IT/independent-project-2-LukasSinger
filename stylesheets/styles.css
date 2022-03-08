@@ -26,6 +26,7 @@ body {
   background-color: black;
   font-family: "Ubuntu";
   font-weight: 300;
+  font-size: 16px;
 }
 
 img {
@@ -128,26 +129,65 @@ img {
 }
 
 #director-content-container {
+  max-width: 1000px;
   padding: 50px;
 }
 
 #director-title {
-  padding-bottom: 25px;
-  font-size: 25px;
+  padding-bottom: 30px;
+  font-size: 30px;
   font-weight: 500;
 }
 
-.slide-container {
+.slides-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.slide-content {
   display: flex;
   flex-direction: row;
 }
 
+.detail-container {
+  padding: 20px;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+
 .slide-image-container {
-  flex-grow: 1;
+  width: 200px;
   height: 100px;
-  padding: 10px;
+  flex: 1 0 auto;
+  padding: 20px;
 }
 
 .detail {
   height: 200px;
+}
+
+.slide-text-container {
+  height: 100px;
+  visibility: hidden;
+}
+
+.detail-container .slide-text-container {
+  height: auto;
+  visibility: visible;
+}
+
+.slide-text {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 auto;
+  padding: 20px;
+}
+
+.slide-name {
+  font-size: 25px;
+}
+
+.slide-subtitle {
+  font-style: italic;
+  padding-bottom: 1em;
 }

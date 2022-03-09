@@ -149,6 +149,12 @@ img {
   flex-direction: row;
 }
 
+@media (max-width: 600px) {
+  .slide-content {
+    flex-direction: column;
+  }
+}
+
 .detail-container {
   padding: 20px;
   border-top: 1px solid white;
